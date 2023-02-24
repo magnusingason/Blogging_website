@@ -1,6 +1,7 @@
 package com.example.Blog_Website_Backend.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,16 +17,19 @@ public class comments {
     )
     private String comment_text;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "post_id")
     private posts post;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "author_id")
     private authors author;
 
     public long getID() {
         return ID;
+    }
+
+    public comments() {
     }
 
     public comments(String comment_text, posts post, authors author) {

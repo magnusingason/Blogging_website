@@ -29,7 +29,7 @@ public class postsService {
         return postsRepository.findByid(id);
     }
 
-    public posts getPostsByAuthor(authors author){
+    public List<posts> getPostsByAuthor(authors author){
         return postsRepository.findByauthor(author);
     }
 }

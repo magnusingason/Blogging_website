@@ -1,6 +1,7 @@
 package com.example.Blog_Website_Backend.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -33,9 +34,10 @@ public class posts {
             orphanRemoval = true,
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<comments> comments;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "author_id")
     private authors author;
 
@@ -43,6 +45,15 @@ public class posts {
         this.title = title;
         this.content = content;
         this.comments = comments;
+        this.author = author;
+    }
+
+    public posts() {
+    }
+
+    public posts(String title, String content, authors author) {
+        this.title = title;
+        this.content = content;
         this.author = author;
     }
 

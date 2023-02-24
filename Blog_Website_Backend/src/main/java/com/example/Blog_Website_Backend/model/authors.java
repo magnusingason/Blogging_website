@@ -1,5 +1,6 @@
 package com.example.Blog_Website_Backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -48,6 +49,7 @@ public class authors {
             orphanRemoval = true,
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
+    @JsonIgnore
     List<posts> posts = new ArrayList<>();
 
 
@@ -55,6 +57,7 @@ public class authors {
             orphanRemoval = true,
             fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
+    @JsonIgnore
     List<comments> comments = new ArrayList<>();
 
     public authors(String first_name, String username, String last_name, String password, String bio, List<com.example.Blog_Website_Backend.model.posts> posts, List<com.example.Blog_Website_Backend.model.comments> comments) {
@@ -65,6 +68,9 @@ public class authors {
         this.bio = bio;
         this.posts = posts;
         this.comments = comments;
+    }
+
+    public authors() {
     }
 
     public long getAuthor_id() {

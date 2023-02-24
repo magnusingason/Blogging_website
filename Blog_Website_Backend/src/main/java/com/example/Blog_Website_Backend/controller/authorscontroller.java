@@ -18,21 +18,52 @@ public class authorscontroller {
         this.authorsService = authorsService;
     }
 
-    @PostMapping("/signup")
+
+    // ENDPOINT FOR CREATING USER
+    @PostMapping("/api/signup")
     public String createAuthor(@RequestBody String json) throws JSONException {
-        JSONObject jsonObject = new JSONObject(json);
+        try {
+            //serialize string json
+            JSONObject jsonObject = new JSONObject(json);
 
-        String first_name = jsonObject.getString("first_name");
-        String last_name = jsonObject.getString("last_name");
-        String username = jsonObject.getString("username");
-        String password = jsonObject.getString("password");
-        String bio = jsonObject.getString("bio");
+            //get values from json
+            String first_name = jsonObject.getString("first_name");
+            String last_name = jsonObject.getString("last_name");
+            String username = jsonObject.getString("username");
+            String password = jsonObject.getString("password");
+            String bio = jsonObject.getString("bio");
 
-        // Búa til nýtt booking
-        authors author = new authors(first_name,username,last_name,password,bio);
+            // create author
+            authors author = new authors(first_name, username, last_name, password, bio);
+            authorsService.createAuthor(author);
 
-        authorsService.createAuthor(author);
-        return "ok!";
+            return "Created Author!";
+        } catch(Exception  e){
+            System.out.println(e);
+            return "something went wrong with creating an author";
+        }
+    }
+
+    @PostMapping("/api/login")
+    public authors loginAuthor(@RequestBody String json) throws JSONException{
+        try{
+            //serialize string json
+            JSONObject jsonObject = new JSONObject(json);
+
+            //get values from json
+            String username = jsonObject.getString("username");
+            String password = jsonObject.getString("password");
+
+            authors author = authorsService.login(username, password);
+            if(author == null){
+                return null;
+            }
+            return author;
+
+
+        }catch (Exception e){
+            return null;
+        }
     }
 
 }

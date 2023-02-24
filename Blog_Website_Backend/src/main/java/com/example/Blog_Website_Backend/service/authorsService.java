@@ -25,7 +25,15 @@ public class authorsService {
         return authorsRepository.findByid(id);
     }
 
-    public authors getAuthorByusername(String username){
-        return authorsRepository.findByusername(username);
+    // this function checks if the user with this username exists.
+    // then it checks if this username fits with the password
+    public authors login(String username, String password){
+        authors author = authorsRepository.findByusername(username);
+        if(author == null){
+            return null;
+        }else if(author.getPassword().equals(password)){
+            return author;
+        }
+        return null;
     }
 }

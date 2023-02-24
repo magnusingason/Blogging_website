@@ -10,5 +10,5 @@ public interface postsRepository extends JpaRepository<posts, Integer> {
     posts save(posts post);
     List<posts> findAll();
     posts findByid(long id);
-    posts findByauthor(authors author);
+    List<posts> findByauthor(authors author);
 }
