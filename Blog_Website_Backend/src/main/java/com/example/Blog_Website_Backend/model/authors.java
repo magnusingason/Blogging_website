@@ -22,6 +22,11 @@ public class authors {
             nullable = false
     )
     private String first_name;
+
+    public authors(String username) {
+        this.username = username;
+    }
+
     @Column(
             name="username",
             nullable = false,

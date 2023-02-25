@@ -1,0 +1,77 @@
+.blog_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: black;
+    color: white;
+    padding: 2%;
+    border: solid white 15px;   
+    overflow: hidden;
+}
+
+.blog{
+    border-bottom: solid rgb(185, 189, 197);
+    width: 100%;
+    overflow: hidden;
+}
+.textarea_comment{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.create_comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+}
+.create_comment button {
+    margin: 1%;
+    margin-top: 2%;
+    padding: 1%;
+    display: inline-block;
+    border: solid white;
+    margin-left: 95%
+
+}
+.form_comment{
+    width: 100%;
+    border-bottom: solid rgb(185, 189, 197, 0.3) 1px;
+    padding: 3%;
+    padding-bottom: 1%;
+}
+.comment_wrapper{
+    width: 100%;
+}
+
+.comments{
+    width: 89%;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    padding: 3%;
+    font-size: 1vw;
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid rgb(185, 189, 197, 0.3) 1px;
+    overflow: hidden;
+}
+
+.comments p{
+    width: 90%;
+}
+
+.login_text{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5%;
+    
+}

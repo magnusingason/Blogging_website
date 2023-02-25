@@ -28,7 +28,7 @@ public class commentsController {
 
     // ENDPOINT FOR CREATING A COMMENT ON A POST
     @PostMapping("/api/blog/comment")
-    public String commentPOST(@RequestBody String json) throws JSONException{
+    public comments commentPOST(@RequestBody String json) throws JSONException{
         try{
             //serialize string json
             JSONObject jsonObject = new JSONObject(json);
@@ -42,12 +42,12 @@ public class commentsController {
 
             //creating comment
             comments comment = new comments(comment_text,post,author);
-            commentsService.CreateComment(comment);
+            comments response = commentsService.CreateComment(comment);
 
-            return "Created comment";
+            return response;
         }catch (Exception e){
             System.out.println(e);
-            return "something went wrong when creating post";
+            return null;
         }
     }
 

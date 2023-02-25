@@ -21,7 +21,7 @@ public class authorscontroller {
 
     // ENDPOINT FOR CREATING USER
     @PostMapping("/api/signup")
-    public String createAuthor(@RequestBody String json) throws JSONException {
+    public authors createAuthor(@RequestBody String json) throws JSONException {
         try {
             //serialize string json
             JSONObject jsonObject = new JSONObject(json);
@@ -35,12 +35,12 @@ public class authorscontroller {
 
             // create author
             authors author = new authors(first_name, username, last_name, password, bio);
-            authorsService.createAuthor(author);
+            authors author_created = authorsService.createAuthor(author);
 
-            return "Created Author!";
+            return author_created;
         } catch(Exception  e){
             System.out.println(e);
-            return "something went wrong with creating an author";
+            return null;
         }
     }
 
@@ -56,7 +56,8 @@ public class authorscontroller {
 
             authors author = authorsService.login(username, password);
             if(author == null){
-                return null;
+                authors wrong_author = new authors(username= "wrong");
+                return wrong_author;
             }
             return author;
 

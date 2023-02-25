@@ -1,0 +1,42 @@
+.login_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+.login_wrapper form{
+    background-color: white;
+    border-radius: 5%;
+    padding: 5%;
+}
+
+.login_flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box{
+    margin-bottom: 5%;
+}
+
+.login_flex input{
+    outline:none;
+    border: none;
+    border-bottom: solid grey;
+    padding: 2%;
+    width: 100%;
+    font-size: max(1.3vw, 12px);
+}
+.login_flex h2{
+    font-size: max(2vw,20px);
+}
+
+.login_flex button{
+    display: inline-block;
+    background-color: rgb(202, 184, 184);
+    padding: 30%;
+    cursor: pointer;
+    text-align: center;
+}

@@ -1,0 +1,3 @@
+2023-02-25 20:08:27 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "delete [*]* from posts where author_id = null"; expected "identifier"; SQL statement:
+delete * from posts where author_id = null [42001-214]
