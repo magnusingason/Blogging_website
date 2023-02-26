@@ -14,7 +14,7 @@ Here you can see multiple one to many relationships where authors can have many 
 
 ### UML design
 
-![alt text](pics/uml design.png)
+![alt text](pics/uml_design.png)
 
 Here you can see an uml design where there are three kinds of classes. There are repository classes which main purpose is to communicate with the database, There are service classes which handle the business logic of the rest api and finally there are the rest controllers who's main objective is to handle http requests. these classes all lead down to the database. 
 
