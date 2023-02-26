@@ -40,3 +40,15 @@
     cursor: pointer;
     text-align: center;
 }
+
+.namelogin{
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+    margin-bottom: 8%;
+    display: flex;
+    gap: 20%;
+}
+.name{
+    width: 30%;
+}

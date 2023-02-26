@@ -32,11 +32,11 @@ function Register() {
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             if(data === 'something went wrong with creating an author'){
                 setRegisterError(true)
             }else{
                 alert("Registration successful!")
+                setUser(data)
                 navigate("/");
             }
             
@@ -46,9 +46,6 @@ function Register() {
             console.error(error);
   });
   }
-  useEffect(() => {
-    console.log('this is the context:', user);
-  }, [user]);
   
 
   return (
@@ -70,22 +67,24 @@ function Register() {
                 <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
                 </label>
             </div>
-            <div className='box'>
-                <label>
-                Your First Name:
-                <input type="email" value={first_name} onChange={e => setFirst_name(e.target.value)} />
-                </label>
-            </div>
-            <div className='box'>
-                <label>
-                Your Last Name:
-                <input type="text" value={last_name} onChange={e => setLast_name(e.target.value)} />
-                </label>
+            <div className='namelogin'>
+                <div className='name'>
+                    <label>
+                    Your First Name:
+                    <input type="email" value={first_name} onChange={e => setFirst_name(e.target.value)} />
+                    </label>
+                </div>
+                <div className='name'>
+                    <label>
+                    Your Last Name:
+                    <input type="text" value={last_name} onChange={e => setLast_name(e.target.value)} />
+                    </label>
+                </div>
             </div>
             <div className='box'>
                 <label>
                     Your Bio:
-                <input type="text" value={bio} onChange={e => setBio(e.target.value)} />
+                <input type="textbox" value={bio} onChange={e => setBio(e.target.value)} />
                 </label>
             </div>
             <div className='box'>

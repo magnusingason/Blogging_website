@@ -13,10 +13,10 @@ function Navbar() {
                     <a href='/'>Home</a>
                 </div>
                 <div className='list_item' > 
-                    <a href='/createblog'>Create Blog Post</a>
+                    <a href='/blog/create'>Create Blog Post</a>
                 </div>
                 <div className='list_item'>
-                    <a >My Blogs</a>
+                    {user ? <a href={`/profile/${user.author_id}`}>My Blogs</a> : <a  href='/login'>My Blogs</a>}
                 </div>
                 <div className='list_item'>
                     {user ? <a onClick={ () => setUser(null)} > Log Out</a> : <a href='/login'>Log In</a>}

@@ -7,5 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface authorsRepository extends JpaRepository<authors, Integer> {
     authors save(authors author);
     authors findByusername(String Username);
+
     authors findByid(long id);
 }

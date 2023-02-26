@@ -1,13 +1,12 @@
 package com.example.Blog_Website_Backend.controller;
 
 import com.example.Blog_Website_Backend.model.authors;
+import com.example.Blog_Website_Backend.model.posts;
 import com.example.Blog_Website_Backend.service.authorsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class authorscontroller {
@@ -42,6 +41,14 @@ public class authorscontroller {
             System.out.println(e);
             return null;
         }
+    }
+
+    @GetMapping("/api/profile/{id}")
+    public authors authorGET(@PathVariable(value="id") long id) throws JSONException {
+
+        //finds author based on id
+        authors author = authorsService.getAuthorByID(id);
+        return author;
     }
 
     @PostMapping("/api/login")
