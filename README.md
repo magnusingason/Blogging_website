@@ -10,7 +10,7 @@ This website is a blogging poster where people can log in and create different b
 
 ![alt text](pics/database_pic.png)
 
-Here you can see multiple one to many relationships where authors can have many posts and comments and posts can have many comments. The columns in the databases are pretty standard.
+Here you can see multiple one to many relationships where authors can have many posts and comments and posts can have many comments. The columns in the databases are pretty standard. I use an H2 database in the rest api and I utilize spring data JPA. Spring data JPA (Java Persistence API) does object - relational mapping. I used JPA so i dont need to do SQL queries as spring boot is able to do that for me. 
 
 ### UML design
 
