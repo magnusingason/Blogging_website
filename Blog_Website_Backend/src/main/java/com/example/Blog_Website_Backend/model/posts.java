@@ -28,6 +28,7 @@ public class posts {
             nullable = false,
             columnDefinition = "TEXT"
     )
+
     private String content;
 
     @OneToMany(mappedBy = "post",
