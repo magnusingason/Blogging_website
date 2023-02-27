@@ -1,3 +1,6 @@
 2023-02-25 20:08:27 jdbc[34]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "delete [*]* from posts where author_id = null"; expected "identifier"; SQL statement:
 delete * from posts where author_id = null [42001-214]
+2023-02-26 20:43:32 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "drop [*]all tables"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL OBJECTS, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
+drop all tables [42001-214]
